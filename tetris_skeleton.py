@@ -150,7 +150,7 @@ def valid_space(shape, grid):
     pass
 
 
-# функция проверки уровня исчезающих "линий"
+# функция проверки условия проигрыша в игре
 def check_lost(positions):
     pass
 
@@ -170,21 +170,26 @@ def draw_grid(surface, grid):
     pass
 
 
+# функция очистки игровой сетки
 def clear_rows(grid, locked):
     pass
 
 
+# функция отрисовки следующей игровой фигуры
 def draw_next_shape(shape, surface):
     pass
 
 
+# функция отрисовки окна игрового поля
 def draw_window(surface):
     pass
 
 
+# основная функция игры
 def main():
     pass
 
 
+# функция отображения главного меню
 def main_menu():
     pass
