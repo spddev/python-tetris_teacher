@@ -342,7 +342,7 @@ def max_score():
 
 
 # функция определения нового игрового уровня
-def next_level(level, score):
+def next_level(score):
     # словарь игровых уровней и очков для них
     score_lvls = {0: 1, 100: 2, 400: 3, 600: 4, 1000: 5, 2000: 6}
     if score in range(0, 100):
@@ -404,7 +404,6 @@ def draw_window(surface, grid, score=0, last_score=0, level=1):
     pygame.draw.rect(surface, (255, 0, 0), (TOP_LEFT_X, TOP_LEFT_Y, PLAY_WIDTH, PLAY_HEIGHT), 4)
 
     draw_grid(surface, grid)
-    # pygame.display.update()
 
 
 # основная функции игры
@@ -456,7 +455,7 @@ def main(win, level):
         level_time += clock.get_rawtime()
         clock.tick()
         # устанавливаем уровень игры
-        level = next_level(level, score)
+        level = next_level(score)
 
         # если время падения фигур на уровне больше 5 секунд
         if level_time / 1000 > 5:
@@ -513,7 +512,7 @@ def main(win, level):
                 # если нажата клавиша "стрелка вниз"
                 if event.key == pygame.K_DOWN:
                     # играем звук ускоренного падения фигуры
-                    move_sound.set_volume(0.7)
+                    drop_sound.set_volume(0.7)
                     drop_sound.play()
                     # увеличиваем на 1 текущую координату y фигуры
                     current_piece.y += 1
